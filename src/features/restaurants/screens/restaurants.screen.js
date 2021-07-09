@@ -14,11 +14,6 @@ const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const RestaurantListContainer = styled.View`
-  flex: 1;
-  padding: ${(props) => props.theme.space[3]};
-`;
-
 export const RestaurantsScreen = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,9 +24,7 @@ export const RestaurantsScreen = () => {
         <SearchContainer>
           <Searchbar placeholder="Buscar" onChangeText={onChangeSearch} value={searchQuery} />
         </SearchContainer>
-        <RestaurantListContainer>
-          <RestaurantInfoCard />
-        </RestaurantListContainer>
+        <RestaurantInfoCard />
       </SafeArea>
     );
 }
