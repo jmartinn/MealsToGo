@@ -28,27 +28,19 @@ const LoadingContainer = styled.View`
 `;
 
 export const RestaurantsScreen = () => {
-  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
-
+  const { isLoading, restaurants } = useContext(RestaurantsContext);
   return (
     <SafeArea>
       {isLoading && (
-        <LoadingContainer style={{ position: "absolute", top: "50%", left: "50%" }}>
-          <Loading
-            size={50}
-            style={{ marginLeft: -25 }}
-            animating={true}
-            color={"tomato"}
-           />
+        <LoadingContainer>
+          <Loading size={50} animating={true} color={Colors.blue300} />
         </LoadingContainer>
-      ) 
-
-      }
+      )}
       <Search />
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
-          return(
+          return (
             <Spacer position="bottom" size="large">
               <RestaurantInfoCard restaurant={item} />
             </Spacer>
