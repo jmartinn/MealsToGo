@@ -352,7 +352,7 @@
         "place_id": "some place id 27",
         "plus_code": {
           "compound_code": "",
-          "global_code": ""
+          "global_code": "",
         },
         "price_level": 2,
         "rating": 4.5,

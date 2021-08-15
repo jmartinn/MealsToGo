@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
 
@@ -9,13 +9,13 @@ const SearchContainer = styled.View`
 `;
 
 export const Search = () => {
-  const { keyword, search } = useContext(LocationContext)
+  const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
 
   return (
     <SearchContainer>
       <Searchbar
-        placeholder="Buscar"
+        placeholder="Search for a location"
         value={searchKeyword}
         onSubmitEditing={() => {
           search(searchKeyword);
@@ -23,7 +23,7 @@ export const Search = () => {
         onChangeText={(text) => {
           setSearchKeyword(text);
         }}
-       />
+      />
     </SearchContainer>
   );
 };

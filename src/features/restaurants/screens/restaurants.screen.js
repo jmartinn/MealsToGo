@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import { ActivityIndicator, Colors } from "react-native-paper";
-import { FlatList, View } from "react-native";
+import { FlatList } from "react-native";
 import styled from "styled-components/native";
+import { ActivityIndicator, Colors } from "react-native-paper";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
-import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Search } from "../components/search.component";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
@@ -20,7 +20,6 @@ const RestaurantList = styled(FlatList).attrs({
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
 `;
-
 const LoadingContainer = styled.View`
   position: absolute;
   top: 50%;
