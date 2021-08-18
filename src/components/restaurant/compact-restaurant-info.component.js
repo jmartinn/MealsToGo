@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import WebView from "react-native-webview"
-import { Platform } from "react-native"
+import React from "react";
+import styled from "styled-components";
+import WebView from "react-native-webview";
+import { Platform } from "react-native";
 
-import { Text } from "../typography/text.component"
+import { Text } from "../typography/text.component";
 
 const CompactImage = styled.Image`
   border-radius: 10px;
@@ -25,8 +25,8 @@ const Item = styled.View`
 
 const isAndroid = Platform.OS === "android";
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
-  const Image = isAndroid ? CompactWebView : CompactImage;
+export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
+  const Image = isAndroid && isMap ? CompactWebView : CompactImage;
 
   return (
     <Item>
