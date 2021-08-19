@@ -1,5 +1,5 @@
-import React, { createContext, createContext, useState } from "react";
-import * as firebase from "firebase";
+import React, { createContext, useContext, useState } from "react";
+import * as firebase from "firebase/app";
 
 import { loginRequest } from "./authentication.service";
 
@@ -18,13 +18,14 @@ export const AuthenticationContextProvider = ({ children }) => {
         setIsLoading(false);
       }).catch((e) => {
         setIsLoading(false);
-        setError(e);
+        setError(e.toString());
       });
   };
 
   return (
     <AuthenticationContext.Provider
       value={{
+        isAuthenticated: !!user,
         user,
         isLoading,
         error,

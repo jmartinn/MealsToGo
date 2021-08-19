@@ -1,4 +1,4 @@
-import React , { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Searchbar } from "react-native-paper";
 
@@ -32,7 +32,7 @@ export const Search = () => {
         onChangeText={(text) => {
           setSearchKeyword(text);
         }}
-       />
+      />
     </SearchContainer>
-  )
-}
+  );
+};
