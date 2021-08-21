@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { ScrollView } from "react-native";
 import { List } from "react-native-paper";
 
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { ScrollView } from "react-native-gesture-handler";
 
 export const RestaurantDetailScreen = ({ route }) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
@@ -44,8 +44,9 @@ export const RestaurantDetailScreen = ({ route }) => {
           expanded={dinnerExpanded}
           onPress={() => setDinnerExpanded(!dinnerExpanded)}
         >
-          <List.Item title="Chicken and Veggies" />
-          <List.Item title="French Toast" />
+          <List.Item title="Spaghetti Bolognese" />
+          <List.Item title="Veal Cutlet with Chicken Mushroom Rotini" />
+          <List.Item title="Steak Frites" />
         </List.Accordion>
 
         <List.Accordion
@@ -54,8 +55,11 @@ export const RestaurantDetailScreen = ({ route }) => {
           expanded={drinksExpanded}
           onPress={() => setDrinksExpanded(!drinksExpanded)}
         >
-          <List.Item title="Water" />
+          <List.Item title="Coffee" />
+          <List.Item title="Tea" />
+          <List.Item title="Modelo" />
           <List.Item title="Coke" />
+          <List.Item title="Fanta" />
         </List.Accordion>
       </ScrollView>
     </SafeArea>
