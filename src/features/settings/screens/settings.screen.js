@@ -13,6 +13,7 @@ const SettingsItem = styled(List.Item)`
 `;
 const AvatarContainer = styled.View`
   align-items: center;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const SettingsScreen = ({ navigation }) => {
@@ -20,7 +21,7 @@ export const SettingsScreen = ({ navigation }) => {
   return (
     <SafeArea>
       <AvatarContainer>
-        <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+        <Avatar.Icon size={100} icon="account" backgroundColor="#2182BD" />
         <Spacer position="top" size="large">
           <Text variant="label">{user.email}</Text>
         </Spacer>
@@ -29,7 +30,7 @@ export const SettingsScreen = ({ navigation }) => {
       <List.Section>
         <SettingsItem
           title="Favourites"
-          description="View your favourites"
+          description="Show current favourites"
           left={(props) => <List.Icon {...props} color="black" icon="heart" />}
           onPress={() => navigation.navigate("Favourites")}
         />

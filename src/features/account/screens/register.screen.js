@@ -40,6 +40,7 @@ export const RegisterScreen = ({ navigation }) => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
+            mode="outlined"
             onChangeText={(p) => setPassword(p)}
           />
         </Spacer>
@@ -50,6 +51,7 @@ export const RegisterScreen = ({ navigation }) => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
+            mode="outlined"
             onChangeText={(p) => setRepeatedPassword(p)}
           />
         </Spacer>
