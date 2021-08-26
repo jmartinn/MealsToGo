@@ -1,13 +1,12 @@
 import camelize from "camelize";
-const axios = require("axios").default;
+import { host } from "../../utils/env";
 
 export const restaurantsRequest = (location) => {
-  return axios
-    .get(
-      `http://localhost:5001/mealstogo-a7c8e/us-central1/placesNearby?location=${location}`
-    )
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  return fetch(
+    `https://us-central1-mealstogo-a7c8e.cloudfunctions.net/placesNearby?location=${location}`
+  ).then((response) => {
+    return response.json();
+  });
 };
 
 export const restaurantsTransform = ({ results = [] }) => {

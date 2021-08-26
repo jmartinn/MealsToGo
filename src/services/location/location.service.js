@@ -1,20 +1,17 @@
 import camelize from "camelize";
-const axios = require("axios").default;
+import { host } from "../../utils/env";
 
 export const locationRequest = (searchTerm) => {
-  console.log("Started the location request progress...");
-  return axios
-    .get(
-      `http://localhost:5001/mealstogo-a7c8e/us-central1/geocode?city=${searchTerm}`
-    )
-    .then((res) => {
-      return res;
-    })
-    .catch((err) => console.log("This is the error", err));
+  return fetch(
+    `https://us-central1-mealstogo-a7c8e.cloudfunctions.net/geocode?city=${searchTerm}`
+  ).then((result) => {
+    return result.json();
+  });
 };
 
 export const locationTransform = (result) => {
   const formattedResponse = camelize(result);
+  console.log(result);
   const { geometry = {} } = formattedResponse.results[0];
   const { lat, lng } = geometry.location;
 
