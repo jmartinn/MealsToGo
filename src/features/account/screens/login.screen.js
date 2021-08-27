@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
 import {
   AccountBackground,
-  AccountCover,
   AccountContainer,
+  AccountCover,
   AuthButton,
   AuthInput,
   ErrorContainer,
@@ -29,6 +29,7 @@ export const LoginScreen = ({ navigation }) => {
           textContentType="emailAddress"
           keyboardType="email-address"
           autoCapitalize="none"
+          mode="outlined"
           onChangeText={(u) => setEmail(u)}
         />
         <Spacer size="large">
@@ -38,6 +39,7 @@ export const LoginScreen = ({ navigation }) => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
+            mode="outlined"
             onChangeText={(p) => setPassword(p)}
           />
         </Spacer>
@@ -47,17 +49,19 @@ export const LoginScreen = ({ navigation }) => {
           </ErrorContainer>
         )}
         <Spacer size="large">
-          {!isLoading ? (
-            <AuthButton
-              icon="lock-open-outline"
-              mode="contained"
-              onPress={() => onLogin(email, password)}
-            >
-              Login
-            </AuthButton>
-          ) : (
-            <ActivityIndicator animating={true} color={Colors.blue300} />
-          )}
+          {!isLoading
+            ? (
+              <AuthButton
+                icon="lock-open-outline"
+                mode="contained"
+                onPress={() => onLogin(email, password)}
+              >
+                Login
+              </AuthButton>
+            )
+            : (
+              <ActivityIndicator animating={true} color={Colors.blue300} />
+            )}
         </Spacer>
       </AccountContainer>
       <Spacer size="large">
