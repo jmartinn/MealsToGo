@@ -56,8 +56,7 @@ export const RestaurantsScreen = ({ navigation }) => {
               onPress={() =>
                 navigation.navigate("RestaurantDetail", {
                   restaurant: item,
-                })
-              }
+                })}
             >
               <Spacer position="bottom" size="large">
                 <FadeInView>

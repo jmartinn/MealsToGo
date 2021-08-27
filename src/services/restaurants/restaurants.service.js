@@ -2,8 +2,11 @@ import camelize from "camelize";
 import { host } from "../../utils/env";
 
 export const restaurantsRequest = (location) => {
+  console.log(
+    `https://us-central1-mealstogo-a7c8e.cloudfunctions.net/placesNearby?location=${location}`,
+  );
   return fetch(
-    `https://us-central1-mealstogo-a7c8e.cloudfunctions.net/placesNearby?location=${location}`
+    `${host}/placesNearby?location=${location}`,
   ).then((response) => {
     return response.json();
   });
